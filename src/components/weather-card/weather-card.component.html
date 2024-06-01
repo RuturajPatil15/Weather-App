@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="search-bar">
+      <input type="text" placeholder="Enter location" value="{{ cityName }}" [(ngModel)]="cityName"  (click)="loadData()" >
+    </div>
+    
+    <!-- <div class="list-group">
+      <a *ngFor="let address of addressess" href="#" class="list-group-item list-group-item-action">{{address}}</a>
+    </div> -->
+
+    <div class="weather-info">
+        <div class="tabs">
+
+          <div class="tab"> {{ Data.temp }} °C   <img src="{{Data.imageUrl}}" alt="Weather-image"></div>
+          <div class="tab"> {{ Data.temp1 }} °C   <img src="{{Data.imageUrl}}" alt="Weather-image"></div>
+          <div class="tab"> {{ Data.temp2 }} °C   <img src="{{Data.imageUrl}}" alt="Weather-image"></div>
+        <div class="weather-display" id="weatherDisplay">
+        </div>
+    </div>
+</div>
