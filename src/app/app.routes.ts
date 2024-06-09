@@ -16,20 +16,20 @@ export const routes: Routes = [
         component: PhoneNumberComponent
         
     },
-    // {
-    //     path: 'code',
-    //     component: CodeComponent
+    {
+        path: 'code',
+        component: CodeComponent
         
-    // },
+    },
     // {
     //     path: 'dashboard',
     //     component: DashboardComponent
         
     // },
-    // {
-    //     path: '',
-    //     redirectTo: '/phone',
-    //     pathMatch: 'full'
+    {
+        path: '',
+        redirectTo: '/phoneno',
+        pathMatch: 'full'
         
-    // },
+    },
 ];

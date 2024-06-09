@@ -1,1 +1,8 @@
-<p>code works!</p>
+<div class="otp">
+    <!-- <div class="card flex justify-content-center">
+        <p-inputOtp value="onOtpChange($event)"  [(ngModel)]="config" [mask]="true" />
+    </div> -->
+    <h1>Enter Otp</h1>
+    <ng-otp-input  (onInputChange)="onOtpChange($event)"  [config]="config"></ng-otp-input>
+    <button class="btn btn-success mt-4" (click)="handleClick()">Verify OTP</button>
+</div>

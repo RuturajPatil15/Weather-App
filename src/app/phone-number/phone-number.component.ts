@@ -29,13 +29,13 @@ export class PhoneNumberComponent implements OnInit {
   phoneNumber: any;
   reCaptchaVerifier!: any;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
-  ngOnInit(): void { 
+  ngOnInit(): void {
     firebase.initializeApp(config);
   }
 
-  getOTP () {
+  getOTP() {
     this.reCaptchaVerifier = new firebase.auth.RecaptchaVerifier(
       'sign-in-button',
       {
@@ -47,7 +47,13 @@ export class PhoneNumberComponent implements OnInit {
       .auth()
       .signInWithPhoneNumber(this.phoneNumber, this.reCaptchaVerifier)
       .then((confirmationResult) => {
-       console.log(confirmationResult);
+        localStorage.setItem('verificationId', JSON.stringify(confirmationResult.verificationId));
+        this.router.navigate(['/code']);
+      }).catch((error) => {
+        alert(error.message);
+        setTimeout(() => {
+          window.location.reload();
+        }, 5000);
       })
   }
 }

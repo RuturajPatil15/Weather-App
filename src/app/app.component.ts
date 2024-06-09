@@ -7,9 +7,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { PhoneNumberComponent } from './phone-number/phone-number.component';
 import { CodeComponent } from './code/code.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { InputOtpModule } from 'primeng/inputotp';
 
 @Component({
-  selector: 'app-root',
+  selector: 'app-root', 
   standalone: true,
   imports: [
     RouterOutlet,
@@ -19,10 +20,11 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     DashboardComponent,
     WeatherCardComponent,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    InputOtpModule
   ],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
 })
 export class AppComponent {
   title = 'weather-app';
